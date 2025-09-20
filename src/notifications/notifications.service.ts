@@ -20,6 +20,9 @@ export class NotificationsService {
     private readonly quotesRepo: Repository<QuotesEntity>,
   ) {
     this.transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
       service: 'gmail',
       auth: {
         user: process.env.EMAIL,
